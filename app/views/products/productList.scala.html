@@ -1,0 +1,16 @@
+@(products: List[Product])(implicit flash: Flash, lang: Lang)
+
+@import play.api.Play.current
+@import play.api.i18n.Messages.Implicits._
+
+@main(Messages("application.name")) {
+
+    <!-- Loop through products list-->
+    <dl class="products">
+        @for(product <- products) {
+            <dt>@product.name</dt>
+            <dd>@product.description</dd>
+        }
+    </dl>
+}
+
